@@ -1,0 +1,40 @@
+burger = 5.95
+a = burger
+milkshake = 3.95
+b = milkshake
+frenchfries = 1.95
+c = frenchfries
+cheeseburger = 7.50
+d = cheeseburger
+chicken_burger = 6.00
+e = chicken_burger
+coke = 2.00
+f = coke
+
+
+#the food item and it's associated letter and its price is written out in another document and then printed
+#only type the letters associated with the food item when prompted
+
+def meal_total():
+    f = open('menu.txt','r')
+    for lines in f:
+        print (lines)
+    f.close()
+    total = 0
+    food = input('Enter the letters associated with the desired food items: ')
+    for char in food:
+        if char == 'a':
+            total+=a
+        if char == 'b':
+            total +=b
+        if char == 'c':
+            total+=c
+        if char == 'd':
+            total+=d
+        if char == 'e':
+            total+=e
+        if char == 'f':
+            total+=f
+    print('Your total for today is: ' + '$',round(total*1.07,2))
+    money = int(input('Enter the amount of money being given to the chasier: ' + '$'))
+    print('Your change for today is: ' + '$',round(money-total*1.07,2))
